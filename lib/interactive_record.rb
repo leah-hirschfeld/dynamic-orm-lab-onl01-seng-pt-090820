@@ -57,7 +57,7 @@ class InteractiveRecord
   def self.find_by(grade)
     binding.pry
     if grade.values.first.class == String
-    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [name])
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [name])
     else
       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [grade])
   end
