@@ -54,7 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(options={})
-    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?, grade = ?", [name] [grade])
+    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE {}", [name] [grade])
   end
 
 end
