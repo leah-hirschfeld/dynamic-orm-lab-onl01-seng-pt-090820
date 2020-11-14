@@ -50,7 +50,7 @@ class InteractiveRecord
   end
 
   def self.find_by_name(name)
-    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE (#{col_names_for_insert})", [name])
+    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [name])
   end
 
   def self.find_by(grade:)
