@@ -61,5 +61,6 @@ class InteractiveRecord
     else
       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [grade.value.second])
   end
+end
 
 end
