@@ -54,11 +54,11 @@ class InteractiveRecord
     DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [name])
   end
 
-  def self.find_by(grade)
-    if grade.values.first.class == String
-      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [grade.values.first])
+  def self.find_by(hash)
+    if hash.values.first.class == String
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [hash.values.first])
     else
-      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [grade.values.first])
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [hash.values.first])
     end
   end
 
