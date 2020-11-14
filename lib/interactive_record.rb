@@ -59,7 +59,7 @@ class InteractiveRecord
     if grade.values.first.class == String
       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", [grade.values.first])
     else
-      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [grade.values.second])
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE grade = ?", [grade.values.first])
     end
   end
 
